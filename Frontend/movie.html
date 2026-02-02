@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Reviews</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <style>
+        .container { padding: 2rem; max-width: 800px; margin: 0 auto; }
+        .movie-header { text-align: center; margin-bottom: 2rem; }
+        
+        /* Review Card Style */
+        .review-card-item {
+            background-color: #1f2937;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            border: 1px solid #374151;
+        }
+        .review-card-item p { color: #d1d5db; margin-bottom: 10px; line-height: 1.5; }
+        .review-actions a { margin-left: 10px; color: #60a5fa; text-decoration: none; font-size: 0.9rem; cursor: pointer; }
+        
+        /* The Nice Input Form */
+        .new-review-panel {
+            background-color: #111827;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid #374151;
+            margin-bottom: 2rem;
+        }
+        input, textarea {
+            width: 100%;
+            background-color: #020617;
+            border: 1px solid #4b5563;
+            color: white;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #60a5fa;
+            color: #0b1120;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover { background-color: #93c5fd; }
+    </style>
+</head>
+<body>
+    <div class="topnav">
+        <a href="index.html">Movie Site</a>
+    </div>
+
+    <div class="container">
+        <div class="movie-header">
+            <h1 id="movie-title">Loading Movie...</h1>
+        </div>
+
+        <div class="new-review-panel">
+            <h3>Add a Review</h3>
+            <br>
+            <input type="text" id="new_user" placeholder="Your Name">
+            <textarea id="new_review" placeholder="Write your review here..." rows="3"></textarea>
+            
+            <button onclick="saveReview('new_review', 'new_user')">Submit Review</button>
+        </div>
+
+        <div id="reviews-list"></div>
+    </div>
+
+    <script src="movie.js"></script>
+</body>
+</html>
